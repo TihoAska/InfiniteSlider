@@ -1,0 +1,144 @@
+@import 'mixins';
+@import 'variables';
+@import 'animations';
+
+body{
+    @include flex(row, center, center, 0px);
+    overflow-x: hidden;
+
+    .container{
+        max-width: 940px;
+        min-height: 730px;
+
+        @include flex($flex-direction: column, $justify-content: space-between);
+
+        header{
+            @include flex($gap: 20px);
+
+            .left-box{
+                width: 301px;
+                height: 100px;
+                background-color: lightgray;
+                border-radius: 0 0 5px 5px;
+            }
+            
+            .right-box{
+                width: 621px;
+                height: 100px;
+                background-color: lightgray;
+                border-radius: 0 0 5px 5px;
+            }
+        }
+
+        .sliders-and-text{
+            @include flex();
+        
+            width: 3340px;
+            max-height: 730px;
+
+            .sliders{
+                transform: translateX(-2400px);
+
+                .top-slider{
+                    width: 3020px;
+                    margin-bottom: 10px;
+
+                    .top-images-container{
+                        @include flex($gap: 10px);
+
+                        img{
+                            border-radius: 5px;
+                        }
+
+                        .top-slider-img{
+                            transition: 0.3s ease;
+                        }
+                    }
+                }
+
+                .bottom-slider-and-arrows{
+                    @include flex($justify-content: space-between);
+
+                    width: 2610px;
+                    transform: translateX(410px);
+
+                    .bottom-slider{
+                        .bottom-images-container{
+                            @include flex($gap: 10px);
+
+                            img{
+                                border-radius: 5px;
+                            }
+
+                            .bottom-slider-img{
+                                transition: 0.3s ease;
+                                z-index: -5;
+                            }
+                        }
+                    }
+
+                    .arrows{
+                        @include flex($flex-direction: column, $align-items: flex-end, $gap: 10px);
+
+                        background-color: white;
+                        z-index: 5;
+                        width: 160px;
+                        height: 200px;
+                        position: absolute;
+                        left: 2450px;
+
+                        button{
+                            height: 60px;
+                            width: 60px;
+                            background-color: transparent;
+                            border: #134880 solid 2px;
+                            border-radius: 5px;
+                            z-index: 5;
+
+                            img{
+                                border-radius: 5px;
+                            }
+                        }
+
+                        button:hover{
+                            cursor: pointer;
+                        }                        
+                    }
+                }
+            }
+
+            .text-container{
+                width: 301px;
+                height: 296px;
+                background-color: white;
+                padding-left: 20px;
+                padding-bottom: 114px;
+                transform: translateX(-2400px);
+                z-index: 5;
+
+                h1{
+                    color:#2B5984;
+                    font-size: 32px;
+                    line-height: 37.5px;
+                    margin: 0;
+                    margin-bottom: 20px;
+                    font-family: $base-font;
+                }
+                
+                p{
+                    color: gray;
+                    font-size: 18px;
+                    line-height: 26px;
+                    margin: 0;
+                    font-family: $base-font;
+                }
+            }
+        }
+
+        footer{
+            background-color: lightgray;
+            height: 100px;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+}
