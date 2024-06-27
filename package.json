@@ -1,0 +1,20 @@
+{
+  "name": "infiniteslider",
+  "version": "1.0.0",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/js -d lib && uglifyjs lib/*.js -o lib/minified.js && rm lib/test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "sass": "^1.77.6",
+    "uglify-js": "^3.18.0"
+  }
+}
